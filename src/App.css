@@ -58,6 +58,11 @@
   background: #efefef;
 }
 
+.country > .header > div {
+  margin-left: 1em;
+  text-align: left;
+}
+
 .medal > div button {
   margin: 1rem;
   background-color: #efefef;
