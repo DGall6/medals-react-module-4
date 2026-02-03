@@ -57,3 +57,8 @@
   padding: .35rem;
   background: #efefef;
 }
+
+.medal > div button {
+  margin: 1rem;
+  background-color: #efefef;
+}

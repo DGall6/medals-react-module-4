@@ -33,8 +33,20 @@ function App() {
     setCountries(countriesMutable);
   }
 
+  function getTotalMedalCount() {
+    const totalGold = countries.reduce((a, b) => a + b.gold, 0);
+    const totalSilver = countries.reduce((a, b) => a + b.silver, 0);
+    const totalBronze = countries.reduce((a, b) => a + b.bronze, 0);
+    return totalGold + totalSilver + totalBronze;
+  }
+
+  const totalMedalCount = getTotalMedalCount()
+
   return (
     <div>
+      <header>
+        <h2>Total Medal Count: {totalMedalCount}</h2>
+      </header>
       {countries.map((country) => (
         <Country key={country.id} country={country} medals={medals} onDelete={handleDelete} handleIncrement={handleIncrement} handleDecrement={handleDecrement} />
       ))}

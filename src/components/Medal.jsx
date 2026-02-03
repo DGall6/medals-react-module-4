@@ -6,9 +6,10 @@ export default function Medal(props) {
             </header>
             <div>
                 <button disabled={props.country[props.name.toLowerCase()] <= 0} onClick={() => props.handleDecrement(props.country.id, props.name.toLowerCase())}>-</button>
-                <p>{props.country[props.name.toLowerCase()]}</p>
+                {props.country[props.name.toLowerCase()]}
                 <button onClick={() => props.handleIncrement(props.country.id, props.name.toLowerCase())}>+</button>
             </div>
+            {props.name !== "Bronze" ? <hr /> : ""}
         </div>
     )
 };
