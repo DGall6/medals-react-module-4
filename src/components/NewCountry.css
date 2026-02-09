@@ -1,0 +1,30 @@
+#trigger {
+    position: fixed;
+    left: 0.8rem;
+    bottom: 0.8rem;
+    cursor: pointer;
+    z-index: 80;
+    transform: scale(80%, 80%);
+    transition: transform 150ms ease-in-out;
+}
+
+#trigger:hover {
+    transform: rotate(90deg) scale(100%, 100%);
+}
+
+#dialog {
+    background-color: #c5c0c0;
+    box-shadow: 0.15rem 0.15rem 0.35rem #1a1a1a;
+    border: 0.1rem solid #1a1a1a;
+    padding: 0.8rem;
+    width: 278px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+#dialog>div button {
+    margin: 0.5em;
+}

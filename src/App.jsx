@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Country from "./components/country";
 import "./App.css";
+import NewCountry from "./components/NewCountry";
 
 function App() {
   const [countries, setCountries] = useState([
@@ -14,6 +15,12 @@ function App() {
     { id: 2, name: "Silver" },
     { id: 3, name: "Bronze" },
   ]);
+
+  function handleAdd(name) {
+    console.log(name);
+    const id = countries.length === 0 ? 1 : Math.max(...countries.map((country) => country.id)) + 1;
+    setCountries(countries.concat({id: id, name: name, gold: 0, silver: 0, bronze: 0}));
+  }
 
   function handleDelete(countryId) {
     setCountries(countries.filter(c => c.id !== countryId));
@@ -50,6 +57,7 @@ function App() {
       {countries.map((country) => (
         <Country key={country.id} country={country} medals={medals} onDelete={handleDelete} handleIncrement={handleIncrement} handleDecrement={handleDecrement} />
       ))}
+      <NewCountry onAdd={handleAdd} />
     </div>
   );
 }
